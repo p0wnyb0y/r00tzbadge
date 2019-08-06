@@ -11,26 +11,28 @@
     color: black;
 }
 
-.prev {
+#prev {
     background-color: #f1f1f1;
     color: black;
 }
 
-.next {
+#next {
     background-color: #4CAF50;
     color: white;
 }
-.home {
+#home {
     background-color: #4CAF50;
     color: white;
     display: none;
 }
 </style>
-<a href="{{ include.backURL }}" class="btn prev">Previous</a> <a href="{{ include.nextURL }}" class="btn next">Next</a> <a href="/r00tzbadge/index" class="btn home">Home</a>
+<a href="{{ include.backURL }}" class="btn" id="prev">Previous</a> <a href="{{ include.nextURL }}" class="btn" id="next">Next</a> <a href="/r00tzbadge/index" class="btn" id="home">Home</a>
 <script>
     if ("{{ include.nextBTN }}" == "false"){
-      var nextBTN = document.getElementsByClassName("next").remove();
-      nextBTN.remove()
+      var nextBTN = document.getElementById("next").style.display = "none"
+    }
+    if ("{{ include.homeBTN }}" == "true"){
+      var nextBTN = document.getElementById("home").style.display = "inline-block"
     }
 </script>
 </html>
